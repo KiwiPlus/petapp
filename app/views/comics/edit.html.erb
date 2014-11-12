@@ -1,8 +1,28 @@
-<h1>edit action!</h1>
+<h1>Comics</h1>
 
-<% form_for(@comic) do |f| %>
+<%=form_for(@comic) do |f| %>
 	<div class= "field">
-	<%= f.label :title %>
-	<%= f.text_field :title%>
+			<%= f.label :title %>
+			<%= f.text_field :title%>
 	</div>
+
+			<div class= "field">
+			<%= f.label :publisher %>
+			<%= f.text_field :publisher%>
+	</div>
+
+	<div class= "field"> 
+			<% Tag.order(:name).each do |tag|%>
+				<%= check_box_tag("comic[tag_ids][]", tag.id,
+				@comic.tags.collect(&:id).include?(tag.id)) %>
+				<!-- el array vacio es para que al enviar al servidor las checkbox sin seleccionar como un objeto vacio -->
+				<%= char.supername %>
+				<br>
+			<% end %>
+	</div>
+	<%= f.submit %>
+
+
+
 <% end %>
+

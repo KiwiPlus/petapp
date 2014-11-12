@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112090311) do
+ActiveRecord::Schema.define(version: 20141112135923) do
+
+  create_table "chars", force: true do |t|
+    t.string   "supername"
+    t.string   "superpower"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comics", force: true do |t|
     t.string   "title"
@@ -19,6 +26,11 @@ ActiveRecord::Schema.define(version: 20141112090311) do
     t.string   "publisher"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "comics_chars", id: false, force: true do |t|
+    t.integer "char_id"
+    t.integer "comic_id"
   end
 
   create_table "comics_tags", id: false, force: true do |t|

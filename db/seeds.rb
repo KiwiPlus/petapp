@@ -12,6 +12,9 @@ rick.comics.create([{title: 'V for a Vendetta', publisher: 'Vertigo'}, {title: '
 Tag.create([{name: 'Adult'}, {name: 'DC'}, {name: 'Superhero'},
 {name: 'Fantasy'}, {name: 'Horror'}])
 
+Char.create([{supername: 'thor', superpower: 'Godhood'},{supername: 'IronMan', superpower: 'Money'},
+	{supername: 'Antman', superpower: 'Size' }])
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
