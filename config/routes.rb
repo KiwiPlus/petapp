@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: '', path_names: {sign_in: 'login'}
   get '/users/:id', to: 'users#show'  
-  # The priority is based upon order of creation: first created -> highest priority.
+  #get "/comics/:id", to: "users#show", as: :comic
+  #get "/comics/:id/edit", to: "comics#edit", as: :edit_comic 
+
+  resources :comics, only: [:edit, :update]
+
+  #:as es usado para referirse a esa ruta con ese nombre
+
+  #The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
