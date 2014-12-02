@@ -1,4 +1,3 @@
 petapp
 ======
-
-rails practice 2
+Rails user sesions using devise
